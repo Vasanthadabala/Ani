@@ -1,0 +1,83 @@
+body{
+    background-color:#DCF2F1;
+    margin: 0;
+}
+#animatedContainer {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+#h1Card,
+#emptyCard,
+#contentCard {
+    width: 300px;
+    background-color: white;
+    overflow: hidden;
+    position: relative;
+}
+
+h1 {
+    background-color:#DCF2F1;
+    color: blue;
+    width: 180px;
+    height: 40px;
+    white-space: nowrap;
+    margin: 0%;
+    padding: 0%;
+    transform: translateX(-100%);
+    animation: slideInH1 1s ease-out forwards;
+}
+
+#emptyCard {
+    height: 0; /* Initially set the height to 0 for the empty card */
+}
+
+#animatedContainer.startAnimation #emptyCard {
+    animation: dropEmptyCard 1s ease-out forwards;
+    animation-delay: 0.5s;
+}
+
+p {
+    background-color: #7FC7D9;
+    color: white;
+    margin: 0%;
+    padding: 0%;
+    width: 280px;
+    height: 120px;
+    transform: translateY(-120%);
+}
+
+#animatedContainer.startAnimation #contentCard p {
+    animation: dropInP 1s ease-out forwards;
+    animation-delay: 0.5s;
+}
+
+@keyframes slideInH1 {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes dropEmptyCard {
+    0% {
+        height: 0px;
+    }
+    100% {
+        height:0px; /* Adjust the height as needed */
+    }
+}
+
+@keyframes dropInP {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
